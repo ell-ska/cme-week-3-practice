@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 
 import { cn } from '@/utils/classnames'
 import { QueryClientProvider } from '@/providers/query-client-provider'
-import { Header } from '@/components/header'
 import './globals.css'
 
 const albertSans = Albert_Sans({ subsets: ['latin'] })
@@ -26,10 +25,7 @@ export default function RootLayout({
           'flex flex-col items-center bg-zinc-50 font-medium text-zinc-800',
         )}
       >
-        <QueryClientProvider>
-          <Header />
-          {children}
-        </QueryClientProvider>
+        <QueryClientProvider>{children}</QueryClientProvider>
       </body>
     </html>
   )
