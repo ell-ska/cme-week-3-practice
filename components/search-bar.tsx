@@ -23,8 +23,6 @@ export const SearchBar = () => {
     enabled: () => (query && query.length >= 3 ? true : false),
   })
 
-  console.log(data)
-
   useEffect(() => {
     setQuery('')
   }, [pathname])
@@ -54,7 +52,7 @@ export const SearchBar = () => {
             data.map(({ id, title, slug }) => (
               <Link
                 key={id}
-                href={`post/${slug}`}
+                href={`/post/${slug}`}
                 className={searchResultItemClasses}
               >
                 {title}
