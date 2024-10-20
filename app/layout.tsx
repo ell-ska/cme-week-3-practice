@@ -22,7 +22,7 @@ export default function RootLayout({
       <body
         className={cn(
           albertSans.className,
-          'flex flex-col items-center bg-zinc-50 font-medium text-zinc-800',
+          'flex min-h-screen flex-col items-center bg-zinc-50 font-medium text-zinc-800',
         )}
       >
         <QueryClientProvider>{children}</QueryClientProvider>
