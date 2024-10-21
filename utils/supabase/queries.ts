@@ -1,10 +1,8 @@
 import { type QueryData } from '@supabase/supabase-js'
 
-import { createClient } from '@/utils/supabase/client'
+import { createClient } from './client'
 
-export const getHomePosts = () => {
-  const supabase = createClient()
-
+export const getHomePosts = (supabase: ReturnType<typeof createClient>) => {
   return supabase
     .from('posts')
     .select('id, title, slug, users("email")')

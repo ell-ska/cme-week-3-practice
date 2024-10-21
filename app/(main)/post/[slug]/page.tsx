@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 
-import { createClient } from '@/utils/supabase/client'
+import { createClient } from '@/utils/supabase/server'
 
 export default async function PostPage({
   params,
