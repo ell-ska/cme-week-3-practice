@@ -25,22 +25,21 @@ export const LogInForm = () => {
   })
 
   return (
-    <>
-      <form
-        onSubmit={handleSubmit((values) => mutate(values))}
-        className='flex w-full max-w-md flex-col gap-4'
-      >
-        <Input {...register('email')} label='email' error={errors.email} />
-        <Input
-          {...register('password')}
-          label='password'
-          error={errors.password}
-        />
-        <Button type='submit' disabled={isPending}>
-          {isPending ? 'logging in...' : 'log in'}
-        </Button>
-      </form>
+    <form
+      onSubmit={handleSubmit((values) => mutate(values))}
+      className='flex w-full max-w-md flex-col gap-4'
+    >
+      <Input {...register('email')} label='email' error={errors.email} />
+      <Input
+        {...register('password')}
+        type='password'
+        label='password'
+        error={errors.password}
+      />
+      <Button type='submit' disabled={isPending}>
+        {isPending ? 'logging in...' : 'log in'}
+      </Button>
       {error && <p className='text-primary'>{error.message}</p>}
-    </>
+    </form>
   )
 }
